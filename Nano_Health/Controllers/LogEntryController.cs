@@ -18,14 +18,14 @@ namespace Nano_Health.Controllers
             _logEntryService = logEntryService;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("add")]
         public IActionResult Add([FromForm] AddLogEntryDto dto)
         {
             var result = _logEntryService.AddLogEntry(dto).Result;
             return Ok(result);
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet("get-all")]
         public async Task<IActionResult> GetAll()
         {

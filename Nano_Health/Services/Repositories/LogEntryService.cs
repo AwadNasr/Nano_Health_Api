@@ -53,10 +53,11 @@ namespace Nano_Health.Services.Repositories
                 Id = x.Id
             }).ToList();
 
-
+            long totalCount = models.Count();
             return new Response
             {
-                Data = modelDto
+                Data = modelDto,
+                Total=totalCount
             };
         }
     }

@@ -32,7 +32,7 @@ namespace Nano_Health.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult> Register([FromForm] RegisterDto model)
+        public async Task<ActionResult> Register(RegisterDto model)
         {
             if (CheckEmailExists(model.Email).Result.Value)
                 return BadRequest(new { Message = "Email is already exist" });
